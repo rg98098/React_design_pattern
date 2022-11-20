@@ -1,17 +1,19 @@
 import './App.css'
 import SplitScreen from "./SplitScreen";
 
-const LeftHandComponent =()=> <h1 style={{background:"green"}}>Left</h1>
-const RightHandComponent =()=> <h1 style={{background:"red"}}>Right</h1>
+const LeftHandComponent =({name})=> <h1 style={{background:"green"}}>{name}</h1>
+const RightHandComponent =({message})=> <h1 style={{background:"red"}}>{message}</h1>
 
 function App() {
   return <div className="App">
   <SplitScreen
-    left={LeftHandComponent}
-    right={RightHandComponent}
     leftWeight={1}
     rightWeight={3}
-  /></div>;
+  >
+  <LeftHandComponent name={"Rahul"}/>
+  <RightHandComponent message={"Hello"}/>
+    </SplitScreen>
+  </div>;
 }
 
 export default App;
